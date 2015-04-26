@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="au.com.noojee.volumiotouch.controllers.MainPaneController">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ToolBar prefHeight="60.0">
+               <items>
+                  <ToggleButton mnemonicParsing="false" onAction="#onRepeat" prefHeight="44.0" text="Repeat">
+                     <tooltip>
+                        <Tooltip text="Repeat" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </ToggleButton>
+                  <ToggleButton mnemonicParsing="false" onAction="#onPause" prefHeight="44.0" prefWidth="44.0" text="||">
+                     <tooltip>
+                        <Tooltip text="Pause" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </ToggleButton>
+                  <Button mnemonicParsing="false" onAction="#onRestartTrack" prefHeight="44.0" prefWidth="44.0" text="&lt;">
+                     <tooltip>
+                        <Tooltip text="Restart" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onPreviousTrack" prefHeight="44.0" prefWidth="44.0" text="&lt;&lt;">
+                     <tooltip>
+                        <Tooltip text="Previous Song" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+                  <Button maxWidth="44.0" mnemonicParsing="false" onAction="#onNextTrack" prefHeight="44.0" prefWidth="44.0" text="&gt;">
+                     <tooltip>
+                        <Tooltip text="Next Song" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+                  <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="344.0" progress="0.0" HBox.hgrow="ALWAYS">
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </ProgressBar>
+               </items>
+            </ToolBar>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+               <children>
+                  <StackPane fx:id="managedPanes" maxWidth="1.7976931348623157E308" prefHeight="308.0" prefWidth="709.0" HBox.hgrow="ALWAYS" />
+                  <VBox prefWidth="88.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label alignment="TOP_CENTER" maxWidth="120.0" prefHeight="15.0" prefWidth="120.0" text="Volume" />
+                        <HBox prefWidth="120.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Slider fx:id="volumeRight" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="20.0" right="15.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+            </HBox>
+            <ToolBar maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="400.0" VBox.vgrow="NEVER">
+               <items>
+                  <Label fx:id="labelNextSong" maxWidth="1.7976931348623157E308" minWidth="300.0" prefHeight="25.0" text="Next: &lt;Artist Song Album Playlist, Genre&gt;" HBox.hgrow="ALWAYS">
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#onShuffle" prefHeight="44.0" text="Shuffle">
+                     <tooltip>
+                        <Tooltip text="Each time you click shuffle the queue will be reshuffled." />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onSkipBack" prefHeight="44.0" prefWidth="44.0" text="&lt;">
+                     <tooltip>
+                        <Tooltip text="Previous in Queue" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onSkipNext" prefHeight="44.0" prefWidth="44.0" text="&gt;">
+                     <tooltip>
+                        <Tooltip text="Next In Queue" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+               </items>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+            </ToolBar>
+            <ToolBar maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="200.0" VBox.vgrow="NEVER">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#onPlaying" prefHeight="44.0" text="Playing">
+                     <tooltip>
+                        <Tooltip text="Control the Playing Song" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onQueued" prefHeight="44.0" text="Queued">
+                     <tooltip>
+                        <Tooltip text="Songs queued for playing" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onPlayList" prefHeight="44.0" text="Play Lists">
+                     <tooltip>
+                        <Tooltip text="Your favourite Compilations" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onMusic" prefHeight="44.0" text="Music">
+                     <tooltip>
+                        <Tooltip text="List of Songs" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onStorage" prefHeight="44.0" text="Storage">
+                     <tooltip>
+                        <Tooltip text="Storage Devices/Locations" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onSettings" prefHeight="44.0" text="Settings">
+                     <tooltip>
+                        <Tooltip text="System Settings" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+                  <Label maxWidth="1.7976931348623157E308" minWidth="30.0" prefHeight="25.0" />
+                  <Button mnemonicParsing="false" onAction="#onTask" prefHeight="44.0" text="Tasks">
+                     <tooltip>
+                        <Tooltip text="Running Tasks" />
+                     </tooltip>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Button>
+                  <ToggleButton mnemonicParsing="false" prefHeight="44.0" text="Help" />
+               </items>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+            </ToolBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

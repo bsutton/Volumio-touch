@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="au.com.noojee.volumiotouch.controllers.SettingsPaneController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <items>
+                  <Button mnemonicParsing="false" text="Playing">
+                     <tooltip>
+                        <Tooltip text="Control the Playing Song" />
+                     </tooltip>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Queued">
+                     <tooltip>
+                        <Tooltip text="Songs queued for playing" />
+                     </tooltip>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Play Lists">
+                     <tooltip>
+                        <Tooltip text="Your favourite Compilations" />
+                     </tooltip>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Music">
+                     <tooltip>
+                        <Tooltip text="List of Songs" />
+                     </tooltip>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Storage">
+                     <tooltip>
+                        <Tooltip text="Storage Devices/Locations" />
+                     </tooltip>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Settings">
+                     <tooltip>
+                        <Tooltip text="System Settings" />
+                     </tooltip>
+                  </Button>
+                  <Separator opacity="0.0" orientation="VERTICAL" prefHeight="10.0" prefWidth="50.0" />
+                  <Button mnemonicParsing="false" text="Tasks">
+                     <tooltip>
+                        <Tooltip text="Running Tasks" />
+                     </tooltip>
+                  </Button>
+               </items>
+            </ToolBar>
+         </bottom>
+         <center>
+            <VBox prefHeight="338.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="289.0" prefWidth="765.0">
+                     <children>
+                        <VBox prefHeight="289.0" prefWidth="692.0">
+                           <children>
+                              <TableView prefHeight="318.0" prefWidth="692.0">
+                                 <columns>
+                                    <TableColumn prefWidth="145.0" text="Artist" />
+                                    <TableColumn prefWidth="119.0" text="Song" />
+                                    <TableColumn prefWidth="107.0" text="Album" />
+                                    <TableColumn prefWidth="118.0" text="Playlist" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="289.0" prefWidth="12.0" />
+                        <VBox prefHeight="289.0" prefWidth="97.0">
+                           <children>
+                              <HBox prefHeight="287.0" prefWidth="72.0">
+                                 <children>
+                                    <VBox prefHeight="287.0" prefWidth="96.0">
+                                       <children>
+                                          <Label alignment="TOP_CENTER" prefHeight="15.0" prefWidth="93.0" text="Volume" />
+                                          <HBox prefHeight="269.0" prefWidth="72.0">
+                                             <children>
+                                                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                <Slider orientation="VERTICAL" prefHeight="258.0" prefWidth="53.0" showTickLabels="true" showTickMarks="true" />
+                                                <Separator orientation="VERTICAL" prefHeight="117.0" prefWidth="8.0" />
+                                                <Slider orientation="VERTICAL" prefHeight="278.0" prefWidth="42.0" showTickLabels="true" showTickMarks="true" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <ToolBar prefHeight="29.0" prefWidth="800.0">
+                     <items>
+                        <Label prefHeight="25.0" prefWidth="347.0" text="Next: &lt;Artist Song Album Playlist" />
+                        <Button mnemonicParsing="false" text="Natural">
+                           <tooltip>
+                              <Tooltip text="Puts the queue back into is original order." />
+                           </tooltip>
+                        </Button>
+                        <Button mnemonicParsing="false" text="Shuffle">
+                           <tooltip>
+                              <Tooltip text="Each time you click shuffle the queue will be reshuffled." />
+                           </tooltip>
+                        </Button>
+                        <Button mnemonicParsing="false" text="&lt;">
+                           <tooltip>
+                              <Tooltip text="Previous in Queue" />
+                           </tooltip>
+                        </Button>
+                        <Button mnemonicParsing="false" text="&gt;">
+                           <tooltip>
+                              <Tooltip text="Next In Queue" />
+                           </tooltip>
+                        </Button>
+                     </items>
+                  </ToolBar>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <ToolBar prefHeight="15.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <items>
+                  <ToggleButton mnemonicParsing="false" text="Repeat">
+                     <tooltip>
+                        <Tooltip text="Repeat" />
+                     </tooltip>
+                  </ToggleButton>
+                  <ToggleButton mnemonicParsing="false" text="||">
+                     <tooltip>
+                        <Tooltip text="Pause" />
+                     </tooltip>
+                  </ToggleButton>
+                  <Button mnemonicParsing="false" text="&lt;&lt;">
+                     <tooltip>
+                        <Tooltip text="Previous Song" />
+                     </tooltip>
+                  </Button>
+                  <Button mnemonicParsing="false" text="&lt;">
+                     <tooltip>
+                        <Tooltip text="Restart" />
+                     </tooltip>
+                  </Button>
+                  <Button mnemonicParsing="false" text="&gt;">
+                     <tooltip>
+                        <Tooltip text="Next Song" />
+                     </tooltip>
+                  </Button>
+                  <ProgressBar prefHeight="20.0" prefWidth="563.0" progress="0.0" />
+               </items>
+            </ToolBar>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

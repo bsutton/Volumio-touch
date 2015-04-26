@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane layoutX="248.0" layoutY="86.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox spacing="4.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox spacing="4.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="Q" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="W" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="E" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="R" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="T" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="Y" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="U" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="I" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="O" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="P" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="4.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="A" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="S" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="D" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="F" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="G" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="H" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="J" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="K" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="L" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="22.0" right="22.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="110.0" spacing="4.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="Z" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="X" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="C" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="V" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="B" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="N" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="M" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" text="0-9" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="38.0" right="38.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
