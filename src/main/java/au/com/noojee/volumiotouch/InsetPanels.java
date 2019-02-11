@@ -15,7 +15,7 @@ import au.com.noojee.volumiotouch.controllers.PaneController;
 public enum InsetPanels
 {
 	settings("Settings.fxml"), playing("Playing.fxml"), main("Main.fxml"), queue("Queue.fxml"), music("Music.fxml"), playlist(
-			"Playlist.fxml"), storage("Storage.fxml"), tasks("Tasks.fxml");
+			"Playlist.fxml"), services("Services.fxml"), tasks("Tasks.fxml");
 
 	private static Logger logger = LogManager.getLogger(InsetPanels.class);
 

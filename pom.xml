@@ -19,6 +19,16 @@
 	<properties>
 		<slf4j.version>1.6.1</slf4j.version>
 	</properties>
+	
+	<repositories>
+        <repository>
+          <id>4thline.org-repo</id>
+          <url>http://4thline.org/m2</url>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
 
 	<build>
 
@@ -35,19 +45,19 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-		   <plugin>
-			<artifactId>maven-assembly-plugin</artifactId>
-      			<configuration>
-        			<archive>
-          			<manifest>
-						<mainClass>au.com.noojee.volumiotouch.Main</mainClass>
-          			</manifest>
-        			</archive>
-        			<descriptorRefs>
-          			<descriptorRef>jar-with-dependencies</descriptorRef>
-        			</descriptorRefs>
-      			</configuration>
-    		</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>au.com.noojee.volumiotouch.Main</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -125,6 +135,27 @@
 			<version>1.2.16</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.rattigan.sonos</groupId>
+			<artifactId>sonos-api</artifactId>
+			<version>0.1.0</version>
+
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-drive</artifactId>
+			<version>v2-rev197-1.21.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.teleal</groupId>
+			<artifactId>teleal-common</artifactId>
+			<version>1.0.13</version>
+		</dependency>
+		
+	
 
 	</dependencies>
 

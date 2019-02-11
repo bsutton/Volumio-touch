@@ -1,8 +1,18 @@
 package au.com.noojee.volumiotouch.controllers;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.tensin.sonos.gen.MusicServices;
+import org.tensin.sonos.model.musicService.MusicService;
+import org.xml.sax.SAXException;
+
+import au.com.noojee.volumiotouch.InsetManager;
+import au.com.noojee.volumiotouch.InsetPanels;
+import au.com.noojee.volumiotouch.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,13 +21,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.StackPane;
-
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-
-import au.com.noojee.volumiotouch.InsetManager;
-import au.com.noojee.volumiotouch.InsetPanels;
 
 /**
  * FXML Controller class
@@ -38,9 +43,14 @@ public class MainPaneController implements Initializable, PaneController
 	@FXML
 	private Label labelNextSong;
 
+	@FXML
+	private ToggleButton playPause;
+
 	private InsetManager insetManager;
 
 	private Parent managedPane;
+
+	private boolean playing;
 
 	/**
 	 * Initializes the controller class.
@@ -48,7 +58,12 @@ public class MainPaneController implements Initializable, PaneController
 	@Override
 	public void initialize(URL url, ResourceBundle rb)
 	{
-		// TODO
+		volumeRight.valueProperty().addListener((observable, oldValue, newValue) -> {
+
+			Main.getSonos().setVolume(Main.getPlayer(), newValue.intValue());
+		});
+
+
 	}
 
 	public StackPane getInsetPane()
@@ -98,6 +113,8 @@ public class MainPaneController implements Initializable, PaneController
 	{
 
 	}
+	
+
 
 	@FXML
 	void onPause(ActionEvent event)
@@ -166,8 +183,9 @@ public class MainPaneController implements Initializable, PaneController
 	}
 
 	@FXML
-	void onStorage(ActionEvent event)
+	void onServices(ActionEvent event)
 	{
+		insetManager.setInset(InsetPanels.services);
 
 	}
 
@@ -182,6 +200,34 @@ public class MainPaneController implements Initializable, PaneController
 	void onTask(ActionEvent event)
 	{
 		insetManager.setInset(InsetPanels.tasks);
+	}
+
+	@FXML
+	void onPlayPause(ActionEvent event)
+	{
+		if (playing)
+		{
+			playPause.setText(">");
+			Main.getSonos().pause(Main.getPlayer());
+			playing = false;
+
+		}
+		else
+		{
+			// sonos.clearQueue(player);
+			// sonos.enqueue(player, "cifs://foo.bar.flac");
+			playPause.setText("||");
+			Main.getSonos().setVolume(Main.getPlayer(), (int)this.volumeRight.getValue());
+			Main.getSonos().play(Main.getPlayer());
+			playing = true;
+
+		}
+
+	}
+
+	@FXML
+	void onVolumeScrollFinished(ActionEvent event)
+	{
 	}
 
 }
